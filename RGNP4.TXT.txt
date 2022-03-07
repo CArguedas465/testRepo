@@ -1,0 +1,26 @@
+--P1
+select concat (first_name, concat (' ',salary)) as employees_and_their_Salaries
+from employees
+order by  salary desc;
+
+-- EJEMPLO DEL EJERCICIO:--
+
+select to_char( salary, '$99,999,00') salary
+from employees
+where last_name = 'Ernest';
+
+--P2
+select concat(concat(first_name, ''), last_name) as "Nombre completo" ,
+replace 
+    replace(
+        replace(
+            replace(
+                replace(
+                    replace(
+                    (job_id, 'AD_PRES', 'a'),
+                        'ST_MAN', 'b'),
+                            'it_prog', 'c')
+                                'sa_rep', 'd')
+                                    'st_clerk'. 'e')
+                                        job_id, 'f') as 'grado'
+from employees;
